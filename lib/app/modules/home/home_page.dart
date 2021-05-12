@@ -23,7 +23,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         builder: (_) {
           if (controller.todoList.hasError) {
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: controller.getList(),
                 child: Text('Error'),
               ),
@@ -90,13 +90,13 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               ),
             ),
             actions: [
-              FlatButton(
+              ElevatedButton(
                 onPressed: () {
                   Modular.to.pop();
                 },
                 child: Text('Cancelar'),
               ),
-              FlatButton(
+              ElevatedButton(
                 onPressed: () async {
                   await model.save();
                   Modular.to.pop();
